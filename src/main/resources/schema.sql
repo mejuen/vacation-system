@@ -1,0 +1,34 @@
+Drop TABLE IF EXISTS VACATION;
+Drop TABLE IF EXISTS MEMBER;
+
+CREATE TABLE VACATION
+(
+REQ_ID INTEGER PRIMARY KEY auto_increment,
+USER_NAME VARCHAR(20) NOT NULL,
+COMMENT VARCHAR(255),
+USE_ANNUAL_LEAVE FLOAT,
+REQUEST_YN VARCHAR(1) default 'Y',
+STARTED_AT VARCHAR(10),
+ENDED_AT VARCHAR(10)
+);
+
+CREATE TABLE USER
+(
+USER_ID bigint not null primary key auto_increment,
+USER_NAME varchar(50) NOT NULL unique,
+PASSWORD VARCHAR(255) NOT NULL,
+ROLE varchar(100) default 'ROLE_USER',
+ANNUAL_LEAVE FLOAT default 15.0
+);
+
+
+-- CREATE TABLE HOLIDAY
+-- (
+-- ID bigint not null primary key auto_increment,
+-- HOLIDAY_NAME varchar(50),
+-- HOLIDAY_DATE VARCHAR(30)
+-- );
+
+
+
+

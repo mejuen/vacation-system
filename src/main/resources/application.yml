@@ -1,0 +1,42 @@
+server:
+  port: 7070
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+
+
+#datasource
+  datasource:
+    url: jdbc:h2:mem:kakaostyle
+    driver-class-name: org.h2.Driver
+    username: pretest
+    password:
+    initialization-mode: always
+    sql-script-encoding: utf-8
+
+
+#mybatis
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    type-aliases-package: kakao.style.pretest.vacationsystem.model
+
+
+#logging level
+logging:
+  level:
+    kakao.style: DEBUG
+
+#jwt
+jwt:
+  header: Authorization
+  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
+  token-validity-in-seconds: 60000
+
+
+
